@@ -18,4 +18,6 @@
 
     `kaggle datasets download yasserh/housing-prices-dataset`
 
-5. 
+5. Run App
+
+    `streamlit run app/Home\ Page.py`
