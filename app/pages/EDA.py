@@ -1,22 +1,24 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
+import kagglehub
 
 def main():
-    import os
-    import kagglehub
-    st.title("Factors Effecting House Prices")
+    st.title("Factors Affecting House Prices")
 
-    path="~/.cache/kagglehub/datasets/yasserh/housing-prices-dataset/versions/1/Housing.csv"
+    path = os.path.expanduser("~/.cache/kagglehub/datasets/yasserh/housing-prices-dataset/versions/1/Housing.csv")
     if not os.path.exists(path):
-        path1 = kagglehub.dataset_download("yasserh/housing-prices-dataset", force_download=True)
+        kagglehub.dataset_download("yasserh/housing-prices-dataset", force_download=True)
 
-    fig, ax = plt.subplots()
     df = pd.read_csv(path)
-    df.hist(figsize=(20,10), ax=ax)
+
+    fig = plt.figure(figsize=(20, 10))
+    df.hist(figsize=(20, 10))
     st.pyplot(fig)
 
-    fig, ax = plt.subplots()
-    df = pd.read_csv(path)
-    df.hist(figsize=(20,10), ax=ax)
-    st.pyplot(fig)
+if __name__ == "__main__":
+    main()
+
+
+
