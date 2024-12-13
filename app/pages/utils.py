@@ -6,8 +6,13 @@ def main():
     from sklearn.preprocessing import LabelEncoder
     from sklearn.preprocessing import OneHotEncoder
     from joblib import dump
+    import os 
+    import kagglehub
     
-    df = pd.read_csv("pages/housing-prices-dataset.zip")
+    path="~/.cache/kagglehub/datasets/yasserh/housing-prices-dataset/versions/1/Housing.csv"
+    if not os.path.exists(path):
+        path1 = kagglehub.dataset_download("yasserh/housing-prices-dataset", force_download=True)
+    df = pd.read_csv(path)
     numeric_cols = df.select_dtypes(include=['float64', 'int64']).columns
     le = LabelEncoder()
 
@@ -45,6 +50,6 @@ def main():
 
     lm = LinearRegression()
     model=lm.fit(X_train, y_train)
-    dump(model, 'LinearModel.joblib')
+    return model
 if __name__ == "__main__":
     main()
