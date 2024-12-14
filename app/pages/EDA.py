@@ -6,7 +6,7 @@ def main():
     import os
     import kagglehub
 
-    st.title("This page displays our EDA!")
+    st.title("EDA Page")
 
     # path="~/.cache/kagglehub/datasets/yasserh/housing-prices-dataset/versions/1/Housing.csv"
     # if not os.path.exists(path):
