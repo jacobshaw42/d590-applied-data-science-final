@@ -17,5 +17,8 @@ def main():
     df.hist(figsize=(20,10), ax=ax)
     st.pyplot(fig)
 
-    image_paths = "app/pages/imgt1.png"
-    st.image(image_paths, caption="EDA1", use_column_width=False, output_format="auto")
+    image_path1 = "app/pages/imgt1.png"
+    st.image(image_path1, caption="EDA1", use_container_width=False, output_format="auto")
+
+    image_path1 = "app/pages/img2_finalproj.png"
+    st.image(image_path1, caption="EDA2", use_container_width=False, output_format="auto")
