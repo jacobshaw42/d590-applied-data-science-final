@@ -1,7 +1,7 @@
 import streamlit as st
 
 def main():
-    st.title("House Price Predictor")
+    st.title("House Price Predictorg")
     
     # Input Fields
     st.number_input("Area", placeholder="Enter Area of House")
@@ -17,7 +17,7 @@ def main():
 
     #st.checkbox(label="Active")
 
-    Furnishing_Status = ['Yes', 'No']
+    Furnishing_Status = ['Furnished','Unfurnished','Semi-Furnished']
     Main_Road = ['Yes', 'No']
     Guestroom = ['Yes', 'No']
     Basement = ['Yes', 'No']
