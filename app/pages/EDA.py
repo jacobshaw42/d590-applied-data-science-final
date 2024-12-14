@@ -27,12 +27,6 @@ def main():
     # st.pyplot(fig)
 
 
-    #sns.relplot(ax=ax,x='bedrooms',y='bathrooms',data=df)
-    # data = {'x': [1, 2, 3, 4, 5], 'y': [2, 4, 5, 4, 5]} 
-    # df = pd.DataFrame(data) 
-    # plot=sns.relplot(x='x', y='y', data=df)
-    # st.pyplot(plot.figure)
-
     st.title("Factors Effecting House Prices")
     le = LabelEncoder()
 
@@ -65,6 +59,7 @@ def main():
 
     plot=sns.relplot(x='area', y='price', hue='furnishingstatus', data=data_filtered, palette='muted', style='furnishingstatus')
     st.pyplot(plot.figure)
+
 
 
     
