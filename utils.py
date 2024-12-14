@@ -52,4 +52,7 @@ def main():
     model=lm.fit(X_train, y_train)
     return model
 if __name__ == "__main__":
-    main()
+    from joblib import dump
+    model = main()
+    
+    dump(model, "app/pages/LinearModel.joblib")

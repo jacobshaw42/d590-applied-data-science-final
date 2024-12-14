@@ -11,13 +11,18 @@ def main():
     parking = st.number_input("Parking",placeholder="Enter no.of parking space")
     furnish = st.number_input("Furnishing Status",placeholder="Enter furnishing status, Fully Furnished=2,Semi-Furnished=1,Not Furnished=0")
     air = st.number_input("Air Conditioning",placeholder="Enter 1 if you have air conditioning, enter 0 if you dont need air conditioning")
-    
-    Furnishing_Status = ['Yes', 'No']
+
+    Furnishing_Status = ['Furnished','Unfurnished','Semi-Furnished']
     Main_Road = ['Yes', 'No']
     Guestroom = ['Yes', 'No']
     Basement = ['Yes', 'No']
     Hotwater_Heating = ['Yes', 'No']
     Preferred_Area = ['Yes', 'No']
+    furnish_map = {
+        "Furnished": 2,
+        "Unfurnished": 0,
+        "Semi-Furnished": 1
+    }
 
     house_furnishing_status = st.radio(label="House Furnishing Status", options=Furnishing_Status)
     user_main_road = st.radio(label="Select if you need the house near the main road", options=Main_Road)
@@ -28,15 +33,11 @@ def main():
     
     if  st.button("Submit"):
         import os
-        from .utils import main as create_model
         import joblib
         import numpy as np
         
-        ml_path = "LinearModel.joblib"
-        if not os.path.exists(ml_path):
-            model = create_model()
-        else:
-            model = joblib.load(ml_path)
+        ml_path = "app/pages/LinearModel.joblib"
+        model = joblib.load(ml_path)
         
         if user_basement == "Yes":
             basement_no, basement_yes = 0,1
@@ -62,6 +63,7 @@ def main():
             pre_area_no, pre_area_yes = 0,1
         else:
             pre_area_no, pre_area_yes = 1,0
+        furnish = furnish_map[house_furnishing_status]
         
         x = np.array([[
             area,beds,baths,stories,parking,furnish,
