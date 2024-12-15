@@ -1,9 +1,9 @@
 import streamlit as st
 
 def main():
-    st.title("EDA Page")
+    st.title("Statistical Overview of Housing Attributes")
 
-    st.markdown("### **Single Variable Visualizations**")
+    st.markdown("### **Distribution of Housing Attributes**")
     image_path2 = "app/pages/img2_finalproj.png"
     st.image(image_path2, use_container_width=False, output_format="auto")
     st.write("""
@@ -11,7 +11,7 @@ def main():
     The price and area distributions are right-skewed, indicating that most properties fall within lower price and area ranges.
     """)
 
-    st.markdown("### **Price By Furnishing Status**")
+    st.markdown("### **Price Trends by Furnishing Status and Area Preference**")
     image_path1 = "app/pages/imgt1.png"
     st.image(image_path1, use_container_width=False, output_format="auto")
     st.write("""
@@ -19,7 +19,7 @@ def main():
     Properties in the preferred area generally have higher prices across all furnishing types.
     """)
 
-    st.markdown("### **Price & Area with Furnishing Status**")
+    st.markdown("### **Price Trends by Covered Area and Furnishing Status**")
     image_path3 = "app/pages/finaldprojappd_3.png"
     st.image(image_path3, use_container_width=False, output_format="auto")
     st.write("""
@@ -28,7 +28,7 @@ def main():
     """)
 
     image_path4 = "app/pages/price_area_apdFP.png"
-    st.markdown("### **Price by Area**")
+    st.markdown("### **Trendline Analysis:House Price and Covered Area**")
     st.image(image_path4, use_container_width=False, output_format="auto")
     st.write("""
     This scatter plot illustrates the price distribution against area size.

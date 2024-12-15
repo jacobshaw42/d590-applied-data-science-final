@@ -4,11 +4,11 @@ def main():
     st.title("House Price Predictor")
     
     # Input Fields
-    area = st.number_input("Area", placeholder="Enter Area of House")
-    beds = st.number_input("Bedrooms",placeholder="Enter no. of bedrooms")
-    baths = st.number_input("Bathroom",placeholder="Enter no. of bathrooms")
-    stories = st.number_input("Stories",placeholder="Enter no. of stories")
-    parking = st.number_input("Parking",placeholder="Enter no.of parking space")
+    area = st.number_input("Area", min_value=1,step=1,placeholder="Enter Area of House")
+    beds = st.number_input("Bedrooms",min_value=1,step=1,placeholder="Enter no. of bedrooms")
+    baths = st.number_input("Bathroom",min_value=1,step=1,placeholder="Enter no. of bathrooms")
+    stories = st.number_input("Stories",min_value=1,step=1,placeholder="Enter no. of stories")
+    parking = st.number_input("Parking",min_value=1,step=1,placeholder="Enter no.of parking space")
 
     Furnishing_Status = ['Furnished','Unfurnished','Semi-Furnished']
     Main_Road = ['Yes', 'No']
