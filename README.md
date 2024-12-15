@@ -14,10 +14,6 @@
 
     `pip install -r requirements.txt`
 
-4. Download Dataset
-
-    `kaggle datasets download yasserh/housing-prices-dataset`
-
-5. Run App
+4. Run App
 
     `streamlit run app/Home\ Page.py`
