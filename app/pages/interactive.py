@@ -9,8 +9,6 @@ def main():
     baths = st.number_input("Bathroom",placeholder="Enter no. of bathrooms")
     stories = st.number_input("Stories",placeholder="Enter no. of stories")
     parking = st.number_input("Parking",placeholder="Enter no.of parking space")
-    furnish = st.number_input("Furnishing Status",placeholder="Enter furnishing status, Fully Furnished=2,Semi-Furnished=1,Not Furnished=0")
-    air = st.number_input("Air Conditioning",placeholder="Enter 1 if you have air conditioning, enter 0 if you dont need air conditioning")
 
     Furnishing_Status = ['Furnished','Unfurnished','Semi-Furnished']
     Main_Road = ['Yes', 'No']
@@ -30,6 +28,7 @@ def main():
     user_basement = st.radio(label="Do you need a basement?", options=Basement)
     user_hotwater_heating = st.radio(label="Do you want hot water heating?", options=Hotwater_Heating)
     user_preferred_area = st.radio(label="Do you want the house in a preferred area?", options= Preferred_Area)
+    air = st.radio(label="Do you want the house to have air conditioning?", options= Preferred_Area)
     
     if  st.button("Submit"):
         import os
@@ -55,7 +54,7 @@ def main():
             hot_water_no, hot_water_yes = 0,1
         else:
             hot_water_no, hot_water_yes = 1,0
-        if air == 1:
+        if air == "Yes":
             air_no, air_yes = 0,1
         else:
             air_no, air_yes = 1,0
