@@ -30,6 +30,7 @@ def main():
     user_airconditioning= st.radio(label="Do you want central airconditioing?",options=Airconditioning)
     user_hotwater_heating = st.radio(label="Do you want hot water heating?", options=Hotwater_Heating)
     user_preferred_area = st.radio(label="Do you want the house in a preferred area?", options= Preferred_Area)
+    air = st.radio(label="Do you want the house to have air conditioning?", options= Preferred_Area)
     
     if  st.button("Submit"):
         import os
@@ -55,7 +56,7 @@ def main():
             hot_water_no, hot_water_yes = 0,1
         else:
             hot_water_no, hot_water_yes = 1,0
-        if user_airconditioning == "Yes":
+        if air == 1:
             air_no, air_yes = 0,1
         else:
             air_no, air_yes = 1,0
