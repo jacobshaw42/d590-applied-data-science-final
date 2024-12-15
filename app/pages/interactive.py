@@ -76,3 +76,5 @@ def main():
         ]])
         pred = model.predict(x)[0]
         st.write(f"The predicted cost of this home should be ${pred:,.2f}")
+if __name__ == "__main__":
+    main()

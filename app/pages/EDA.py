@@ -34,3 +34,6 @@ def main():
     This scatter plot illustrates the price distribution against area size.
     Most properties are clustered in the lower area range, but as the area increases, there is a wider spread in prices.
     """)
+
+if __name__ == "__main__":
+    main()
