@@ -27,10 +27,9 @@ def main():
     user_main_road = st.radio(label="Select if you need the house near the main road", options=Main_Road)
     user_guestroom = st.radio(label="Do you need a guestroom?", options=Guestroom)
     user_basement = st.radio(label="Do you need a basement?", options=Basement)
-    user_airconditioning= st.radio(label="Do you want central airconditioing?",options=Airconditioning)
     user_hotwater_heating = st.radio(label="Do you want hot water heating?", options=Hotwater_Heating)
     user_preferred_area = st.radio(label="Do you want the house in a preferred area?", options= Preferred_Area)
-    air = st.radio(label="Do you want the house to have air conditioning?", options= Preferred_Area)
+    air = st.radio(label="Do you want the house to have air conditioning?", options= Airconditioning)
     
     if  st.button("Submit"):
         import os
