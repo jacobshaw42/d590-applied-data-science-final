@@ -3,7 +3,7 @@ import streamlit as st
 def main():
     st.title("Statistical Overview of Housing Attributes")
 
-    st.markdown("### **Single Variable Visualizations**")
+    st.markdown("### **Distribution of Housing Attributes**")
     image_path2 = "app/pages/img2_finalproj.png"
     st.image(image_path2, use_container_width=False, output_format="auto")
     st.write("""
